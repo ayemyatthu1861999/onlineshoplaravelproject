@@ -1,0 +1,103 @@
+//Main Functions
+-Item Management
+  -Brand/Category/Subcategory/colors
+
+
+ -Sell/Shopping
+
+   
+
+-Order Management
+  - items  / customer
+  -orders/
+     -voucherid,user_id,orderdate,status
+
+  -order_details
+        -voucherid,product_id,qty
+  -brands
+  =>1|   b1|  photo
+  =>2|   b2|   photo
+
+  -categories
+  =>1  |fashion |photo
+  =>2   |electronic |photo
+
+  -subcategories
+  =>1  |baby wear  |16
+_Customer Management
+   -Reports
+
+   Model relationship
+   -----------------
+   -one-to-one
+     -hasOne(p)
+     -belongsTo(c)
+
+   -one-to-many
+      -hasmany(p)
+      _belongsTo(c)
+
+
+  -many-to-many
+    -belongsToMany
+    -pivot table
+
+
+
+Item(CRUD)
+------
+create-show form,store data
+retrieve-display data(all,row)
+update-show form with old value,update 
+delete-delete data
+
+
+
+
+
+Authentication
+-------------
+
+-installtion
+   -nodejs(call npm in terminal)
+-Docs
+  -Security/Authentication
+-Commands
+    -Composer require laravel/ui
+    -php artisan ui bootstrap --auth
+    -npm install
+    -npm run dev
+-Routes
+   -localhost:8000/login
+   -localhost:8000/register
+
+
+Spatie
+------
+  -composer require(3)
+  -public(5)
+  -php artisan migrate
+  -create new seeder class(RoleTableSeeder)
+  -seed this class
+  -User model->use HasRoles
+  -app/Http/Controller/Auth/RegisterController
+    -create method->assignRole
+  -Register middleware(app/Http/kernel.php routeMiddleware)
+  -routes/web.php
+    -role:Admin
+
+
+
+    
+
+
+GIT
+-----
+
+-git init
+-git add
+-git commit -m"message"
+-git remote add origin url
+-git push -u origin master
+-git pull
+
