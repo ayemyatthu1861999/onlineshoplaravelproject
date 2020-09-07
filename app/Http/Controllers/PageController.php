@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Item;
 use App\Brand;
 use Illuminate\Http\Request;
+use App\Category;
+use App\Subcategory;
+
 //use Illuminate\Support\Facades\Route;
 
 class PageController extends Controller
@@ -11,13 +14,13 @@ class PageController extends Controller
     public function mainfun($value='')
 
     {    
-    $items=Item::all()->take(6);
-     $brands=Brand::all();
 
-     /*$route = Route::current();     
-    dd($route);      */    
-    //dd($items);                            
-    	return view('main',compact('items','brands'));
+        $discountItems = Item::where('discount','>',0)->take(6)->get();
+    $brands = Brand::take(6)->get();
+    $categories = Category::take(8)->get();
+
+    return view('main',compact('discountItems','brands','categories'));
+    
     }
      public function loginfun($value='')
     {
