@@ -19,11 +19,14 @@ Route::get('/', 'PageController@mainfun')->name('mainpage');
 
 Route::get('register','PageController@registerfun')->name('registerpage');
 
-Route::get('brand','PageController@brandfun')->name('brandpage');
+Route::get('brand/{id}','PageController@brandfun')->name('brandpage');
+Route::get('itemsbycategory/{id}','PageController@itemsbycategory')->name('itemsbycategorypage');
+Route::get('filteritems/{id}','PageController@filteritems')->name('filteritemspage');
 
-Route::get('itemdetail','PageController@itemdetailfun')->name('itemdetailpage');
+Route::get('itemdetail/{id}','PageController@itemdetailfun')->name('itemdetailpage');
 
 Route::get('promotion','PageController@promotionfun')->name('promotionpage');
+
 
 Route::get('shoppingcart','PageController@shoppingcartfun')->name('shoppingcartpage');
 

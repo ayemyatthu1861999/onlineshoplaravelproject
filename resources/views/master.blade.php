@@ -76,9 +76,31 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-10">
-						<a href="#" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-left"> Login|</a><a href="#" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-left">Sign-up </a>
+						@guest
+						<a href="{{route('loginpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-left"> {{ __('Login|') }}|</a>
+						@if (Route::has('register'))
+						<a href="{{route('register')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-left">{{ __('Register') }} </a>
 
-						
+						@endif
+                        @else
+                       
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                           
+                        @endguest
 					</div>
 				</div>
 			</div>
@@ -94,7 +116,7 @@
 				<a href="{{route('shoppingcartpage')}}" class="text-decoration-none d-xl-inline d-lg-inline d-md-inline d-sm-none d-none shoppingcartLink"> 
 					<i class="icofont-shopping-cart"></i> 
 					<span class="badge badge-pill badge-light badge-notify cartNotistyle cartNoti"> 1 </span>
-					<span> 4,800 Ks </span>
+					<span>  </span>
 				</a>
 
 				<a href="" class="text-decoration-none d-xl-none d-lg-none d-md-none d-sm-inline-block d-inline-block shoppingcartLink"> 

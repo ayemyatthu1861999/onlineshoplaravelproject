@@ -17,7 +17,7 @@
 	<div class="mt-3">
 		<p class="text-muted ml-4"> Shop By </p>
 		<hr>
-		<a data-toggle="collapse" href="#category" role="button" aria-expanded="false" aria-controls="category">
+		<a data-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="category">
 			Category
 			<i class="icofont-rounded-down float-right mr-3"></i>
 
@@ -33,7 +33,7 @@
 
 		<hr>
 
-		<a href="#"> Poromotion </a>
+		<a href="{{route('promotionpage')}}"> Poromotion </a>
 		<hr>
 
 		<a data-toggle="collapse" href="#brand" role="button" aria-expanded="false" aria-controls="brand">
@@ -195,31 +195,33 @@
 
 					@foreach($items as $item)
 					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset($item->photo) }}" class="img-fluid">
-							<p class="text-truncate">{{$item->name}}</p>
-							
-							<p class="item-price">
-								<strike>250,000Ks </strike> 
-								<span class="d-block">{{$item->price}}</span>
-							</p>
+						<a href="{{route('itemdetailpage',$item->id)}}">
+							<div class="pad15">
+								<img src="{{ asset($item->photo) }}" class="img-fluid">
+								<p class="text-truncate">{{$item->name}}</p>
+								
+								<p class="item-price">
+									<strike>250,000Ks </strike> 
+									<span class="d-block">{{$item->price}}</span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{$item->photo}}" data-price="{{$item->price}}">Add to Cart</a>
+								
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{$item->photo}}" data-price="{{$item->price}}">Add to Cart</a>
- 
+							
 						</div>
-					</div>
-					
-					 @endforeach
+					</a>
+					@endforeach
 
 				</div>
 				<button class="btn btnMain leftLst"><</button>
@@ -599,282 +601,236 @@
 						<div class="pad15">
 							<img src="{{ asset('front/css/image/item/saisai_four.jpg') }}" class="img-fluid">
 							<p class="text-truncate">Multi Ite
-							<p class="item-price">
-								<strike>250,000 Ks </strike> 
-								<span class="d-block">230,000 Ks </span>
-							</p>
+								<p class="item-price">
+									<strike>250,000 Ks </strike> 
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/giordano_one.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<strike>250,000 Ks </strike> 
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/giordano_one.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<strike>250,000 Ks </strike> 
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/giordano_two.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/giordano_two.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/giordano_three.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/giordano_three.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/giordano_four.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<strike>250,000 Ks </strike> 
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/giordano_four.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<strike>250,000 Ks </strike> 
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/apple_four.jpeg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/apple_four.jpeg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/apple_one.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<strike>250,000 Ks </strike> 
-								<span class="d-block">230,000 Ks</span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/apple_one.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<strike>250,000 Ks </strike> 
+									<span class="d-block">230,000 Ks</span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/apple_three.jpg') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/apple_three.jpg') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none">Add to Cart</a>
-
 						</div>
-					</div>
-					<div class="item">
-						<div class="pad15">
-							<img src="{{ asset('front/css/image/item/apple_two.png') }}" class="img-fluid">
-							<p class="text-truncate">Multi Item Carousel</p>
-							<p class="item-price">
-								<strike>250,000 Ks </strike> 
-								<span class="d-block">230,000 Ks </span>
-							</p>
+						<div class="item">
+							<div class="pad15">
+								<img src="{{ asset('front/css/image/item/apple_two.png') }}" class="img-fluid">
+								<p class="text-truncate">Multi Item Carousel</p>
+								<p class="item-price">
+									<strike>250,000 Ks </strike> 
+									<span class="d-block">230,000 Ks </span>
+								</p>
 
-							<div class="star-rating">
-								<ul class="list-inline">
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
-									<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
-								</ul>
+								<div class="star-rating">
+									<ul class="list-inline">
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star' ></i></li>
+										<li class="list-inline-item"><i class='bx bxs-star-half' ></i></li>
+									</ul>
+								</div>
+
+								<a href="#" class="addtocartBtn text-decoration-none" >Add to Cart</a>
+
 							</div>
-
-							<a href="#" class="addtocartBtn text-decoration-none" >Add to Cart</a>
-
 						</div>
-					</div>
 
+					</div>
+					<button class="btn btnMain leftLst"><</button>
+					<button class="btn btnMain rightLst">></button>
 				</div>
-				<button class="btn btnMain leftLst"><</button>
-				<button class="btn btnMain rightLst">></button>
 			</div>
 		</div>
+
+
+		<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+
+		<!-- Brand Store -->
+		<div class="row mt-5">
+			<h1> Top Brand Stores </h1>
+		</div>
+
+		<!-- Brand Store Item -->
+		<section class="customer-logos slider mt-5">
+			@foreach($brands as $brand)
+			<div class="slide">
+				<a href="{{route('brandpage',$brand->id)}}">
+					<img src="{{ asset($brand->photo) }}" class="img-fluid">
+				</a>
+			</div>
+        @endforeach			
+		</section>
+
+		<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+
 	</div>
-
-
-	<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
-
-	<!-- Brand Store -->
-	<div class="row mt-5">
-		<h1> Top Brand Stores </h1>
-	</div>
-
-	<!-- Brand Store Item -->
-	<section class="customer-logos slider mt-5">
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/loacker_logo.jpg') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/lockandlock_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/apple_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/giordano_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/saisai_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/brands_logo.png') }}">
-			</a>	
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/acer_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/bella_logo.png') }}">
-			</a>
-		</div>
-
-		<div class="slide">
-			<a href="">
-				<img src="{{ asset('front/css/image/brand/ariel_logo.png') }}">
-			</a>
-		</div>
-	</section>
-
-	<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
-
-</div>
-@endsection
-@section('script')
-<script type="text/javascript" src="{{asset('front/js/main.js')}}"></script>
-@endsection
+	@endsection
+	@section('script')
+	<script type="text/javascript" src="{{asset('front/js/main.js')}}"></script>
+	@endsection
