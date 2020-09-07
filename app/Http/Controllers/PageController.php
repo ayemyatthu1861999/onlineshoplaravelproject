@@ -45,6 +45,12 @@ class PageController extends Controller
     {
         return view('promotion');
     }
+    public function filteritems($id)
+  {
+    $subcategory = Subcategory::find($id);
+    $subcategory->setRelation('items', $subcategory->items()->paginate(3));
+    return view('filteritems',compact('subcategory'));
+  }
 
     public function shoppingcartfun($value='')
     {
