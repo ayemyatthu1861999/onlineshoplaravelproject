@@ -11,13 +11,15 @@ class PageController extends Controller
     public function mainfun($value='')
 
     {    
-    $items=Item::all()->take(6);
-     $brands=Brand::all();
+    $discountItems=Item::where('discount','>',0)->take(6)->get();
+     $brands=Brand::take(6)->get();
+     $categories=Category::take(8)->get();
+
 
      /*$route = Route::current();     
     dd($route);      */    
     //dd($items);                            
-    	return view('main',compact('items','brands'));
+    	return view('main',compact('discountitems','brands','categories'));
     }
      public function loginfun($value='')
     {
